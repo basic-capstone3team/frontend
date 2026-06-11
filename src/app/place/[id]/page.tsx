@@ -216,30 +216,30 @@ export default function PlaceDetail() {
         <div className="flex gap-3 mb-4">
           <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-[#FFF0F0] rounded-[3px]">
             <MovieIcon />
-            <span className="text-[10px] font-bold font-['Inter'] text-[#FA5252]">{place.media_source}</span>
+            <span className="text-[10px] font-bold font-sans text-[#FA5252]">{place.media_source}</span>
           </div>
 
           <div className="flex items-center px-2.5 py-1.5 bg-[#F5F4F0] rounded-[3px]">
-            <span className="text-[10px] font-bold font-['Inter'] text-[#8F8484]">{place.type}</span>
+            <span className="text-[10px] font-bold font-sans text-[#8F8484]">{place.type}</span>
           </div>
         </div>
 
         {/* Title */}
-        <h1 className="text-[24px] font-bold font-['Inter'] text-black leading-[1.3] mb-3 pr-2 break-keep">
+        <h1 className="text-[24px] font-bold font-sans text-black leading-[1.3] mb-3 pr-2 break-keep">
           {place.name}
         </h1>
 
         {/* Location Icon & Address */}
         <div className="flex items-start gap-1.5 mb-4">
           <MapPin className="w-[20px] h-[20px] text-[#FA5252] mt-0.5 flex-shrink-0" />
-          <span className="text-[14px] font-medium font-['Inter'] text-[#656565] leading-relaxed">
+          <span className="text-[14px] font-medium font-sans text-[#656565] leading-relaxed">
             {place.location}
           </span>
         </div>
 
         {/* Rating */}
         <div className="flex items-center gap-2.5 mb-8">
-          <span className="text-[16px] font-semibold font-['Inter'] text-[#FA5252]">{place.rating}</span>
+          <span className="text-[16px] font-semibold font-sans text-[#FA5252]">{place.rating}</span>
           <div className="flex gap-[2px]">
             {[1, 2, 3, 4, 5].map((star) => {
               const rating = place.rating || 0;
@@ -266,7 +266,7 @@ export default function PlaceDetail() {
               );
             })}
           </div>
-          <span className="text-[14px] font-bold font-['Inter'] text-[#B8B8B8] tracking-[-0.05em] ml-2">
+          <span className="text-[14px] font-bold font-sans text-[#B8B8B8] tracking-[-0.05em] ml-2">
             리뷰 0개
           </span>
         </div>
@@ -283,7 +283,7 @@ export default function PlaceDetail() {
               onClick={() => setActiveTab(tab.id)}
               className="relative flex-1 text-center pb-3 transition-colors"
             >
-              <span className={`text-[14px] font-semibold font-['Inter'] tracking-[-0.05em] ${activeTab === tab.id
+              <span className={`text-[14px] font-semibold font-sans tracking-[-0.05em] ${activeTab === tab.id
                 ? "bg-gradient-to-b from-[#FB5B57] to-[#FE876F] text-transparent bg-clip-text"
                 : "text-[#BDBDBD]"
                 }`}>
@@ -300,26 +300,26 @@ export default function PlaceDetail() {
         <div className="w-full flex-1 mb-[90px]">
           {activeTab === "info" && (
             <>
-              <h3 className="text-[14px] font-bold font-['Inter'] tracking-[-0.05em] text-black mb-3 text-left">
+              <h3 className="text-[14px] font-bold font-sans tracking-[-0.05em] text-black mb-3 text-left">
                 소개
               </h3>
-              <p className="text-[13px] font-medium font-['Inter'] leading-[1.6] text-[#A2A2A2] text-left mb-8 break-keep">
+              <p className="text-[13px] font-medium font-sans leading-[1.6] text-[#A2A2A2] text-left mb-8 break-keep">
                 {place.description}
               </p>
 
-              <h3 className="text-[14px] font-bold font-['Inter'] tracking-[-0.05em] text-black mb-3 text-left">
+              <h3 className="text-[14px] font-bold font-sans tracking-[-0.05em] text-black mb-3 text-left">
                 운영시간
               </h3>
               <div className="flex items-start gap-1.5 text-[#626262] mb-8">
                 <Clock className="w-[14px] h-[14px] flex-shrink-0 mt-[2px]" />
-                <p className="text-[13px] font-medium font-['Inter'] leading-[1.6] text-left break-keep">
+                <p className="text-[13px] font-medium font-sans leading-[1.6] text-left break-keep">
                   {place.hours}
                 </p>
               </div>
 
               {place.tags && place.tags.length > 0 && (
                 <>
-                  <h3 className="text-[14px] font-bold font-['Inter'] tracking-[-0.05em] text-black mb-3 text-left">
+                  <h3 className="text-[14px] font-bold font-sans tracking-[-0.05em] text-black mb-3 text-left">
                     태그
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -346,7 +346,7 @@ export default function PlaceDetail() {
                     className="w-full h-[52px] rounded-[15px] bg-gradient-to-r from-[#FA5654] to-[#FF8970] flex justify-center items-center gap-[13px] transition-transform active:scale-95 shadow-lg shadow-[#FA5654]/20"
                   >
                     <CourseUpIcon />
-                    <span className="text-[16px] font-extrabold font-['Inter'] text-white">
+                    <span className="text-[16px] font-extrabold font-sans text-white">
                       이걸로 코스 짜기
                     </span>
                   </button>
